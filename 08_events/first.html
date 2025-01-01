@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Event Listener</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <!-- https://www.pexels.com/photo/gentoo-penguins-in-antarctica-20413999/ -->
+    <h2>Amazing Images</h2>
+    <ul id="images">
+      <li>
+        <img
+          width="300px"
+          height="300px"
+          id="ocean"
+          src="https://images.pexels.com/photos/29292655/pexels-photo-29292655.jpeg"
+        />
+      </li>
+      <li>
+        <img
+          width="300px"
+          height="300px"
+          id="building"
+          src="https://images.pexels.com/photos/4451427/pexels-photo-4451427.jpeg"
+          onclick="alert('this is  a building')"
+        />
+      </li>
+                <!-- // It will not be good for a scalable projects -->
+      <li>
+        <img
+          width="300px"
+          height="300px"
+          id="rose"
+          src="https://images.pexels.com/photos/12093287/pexels-photo-12093287.jpeg"
+        />
+      </li>
+      <li>
+        <img
+          width="300px"
+          height="300px"
+          id="penguin"
+          src="https://images.pexels.com/photos/20413999/pexels-photo-20413999.jpeg"
+        />
+      </li>
+      <li>
+        <a href="https://google.com" id="google" style="color: aliceblue"
+          >Google</a
+        >
+      </li>
+    </ul>
+  </body>
+  <script>
+    // document.getElementById("penguin").onclick=function(){   // it is a good method but it give less 
+                                                                // features like there doesn't exist any propagation method
+    //     alert("Penguin clicked");                           
+    // }
+
+    // attachEvent
+    // JQuery() on
+    //type,timeStamp,defaultPrevented
+    //target, toElement,srcElement,currentTarget
+    //clientX,clientY,screenX,screenY,layerX,layerY
+    //altKey,ctrlKey,shiftkey,keyCode
+    // document.getElementById("images").addEventListener("click",function(e){
+    //       console.log("clicked inside ul tag")
+       
+    // },false)
+    // document.getElementById("penguin").addEventListener("click",function(e){
+    //       console.log("penguin clicked")
+    //       e.stopPropagation()
+    // },false)
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     // e.preventDefault();
+    //     // e.stopPropagation();
+    //     console.log("Google is clicked")
+    // })
+
+    document.querySelector("#images").addEventListener("click",function(e){
+         console.log(e.target.tagName)
+         if(e.target.tagName==='IMG'){
+            let removeIt=e.target.parentNode;
+            removeIt.remove()
+         }
+        
+        // console.log(e.target.parentNode)
+        
+    })
+
+  </script>
+</html>
