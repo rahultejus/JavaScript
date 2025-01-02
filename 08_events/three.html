@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body>
+    <h1>Java Script Series</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+//    setInterval(function(){
+//     console.log("The script changes continuously")
+//    },2000)
+   
+//   const intervalId=function(str){
+//          console.log(str)
+//   }
+//  const clearId = setInterval(intervalId,1000,"Rahul")
+ let intervalId;
+  console.log(intervalId)
+ const startInterval=function(){
+    if(!intervalId){
+        intervalId=setInterval(function(){
+            console.log("The setInterval function is set of given script")
+            console.log(intervalId)
+        },1000);
+        console.log("Interval started");
+        console.log(intervalId)
+    }
+ }
+ 
+  const stopInterval=function(){
+    if(intervalId){
+        clearInterval(intervalId);
+        intervalId=null;
+        console.log("Interval stopped");
+        console.log(intervalId)
+    }
+  }
+
+
+  document.querySelector("#start").addEventListener('click',startInterval,false)
+  document.querySelector("#stop").addEventListener('click',stopInterval,false)
+  
+  
+</script>
+</html>
