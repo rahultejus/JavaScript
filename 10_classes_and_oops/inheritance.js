@@ -20,3 +20,9 @@ class Teacher extends User{
 
 const teacher=new Teacher("Rahul","rahul@gmail.com","12345")
 teacher.addCourse()
+teacher.logMe()
+
+const user1=new User("This is user1")
+user1.logMe()
+
+console.log(teacher===user1)
