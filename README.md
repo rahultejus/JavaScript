@@ -1,2 +1,2 @@
-# JavaScript
+### JavaScript
 Mastering the JavaScript
